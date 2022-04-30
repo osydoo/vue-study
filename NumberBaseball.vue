@@ -1,11 +1,11 @@
 <template>
   <div>
     <h1>{{ result }}</h1>
-    <form v-on:submit="onSubmitForm">
+    <form @submit-prevent="onSubmitForm">
       <input ref="answer" maxlength="4" v-model="value" />
       <button type="submit">입력</button>
     </form>
-    <div>시도: {{ this.tires.length }}</div>
+    <div>시도: {{ this.tries.length }}</div>
     <ul>
       <li v-for="t in tries" v-bind:key="t.try">
         <div>{{ t.try }}</div>
@@ -24,8 +24,7 @@ export default {
     };
   },
   methods: {
-    onSubmitForm(e) {
-      e.preventDefault();
+    onSubmitForm() {
       this.tries.push({
         try: this.value,
         result: this.result,
