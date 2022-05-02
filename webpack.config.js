@@ -33,7 +33,6 @@ module.exports = {
   output: {
     filename: "[name].js",
     path: path.join(__dirname, "dist"),
-    publicPath: path.join(__dirname, "dist"),
   },
   devServer: {
     hot: true,
@@ -41,7 +40,7 @@ module.exports = {
     port: 8080,
     open: true,
     historyApiFallback: false,
-    static: path.join(__dirname + "/dist/"),
+    static: path.join(__dirname + "/dist"),
   },
   mode: "development",
 };
